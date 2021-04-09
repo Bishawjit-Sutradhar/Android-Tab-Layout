@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android Tab Layout</string>
+    <string name="tab_text_1">Bnagla</string>
+    <string name="tab_text_2">India</string>
+    <string name="tab_text_3">Pakistan</string>
+    <string name="tab_text_4">China</string>
+</resources>
