@@ -1,0 +1,64 @@
+package com.example.androidtablayout.ui.main;
+
+import android.content.Context;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.example.androidtablayout.Bangla;
+import com.example.androidtablayout.China;
+import com.example.androidtablayout.India;
+import com.example.androidtablayout.Pakistan;
+import com.example.androidtablayout.R;
+
+/**
+ * A [FragmentPagerAdapter] that returns a fragment corresponding to
+ * one of the sections/tabs/pages.
+ */
+public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+    @StringRes
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2,R.string.tab_text_3,R.string.tab_text_4};
+    private final Context mContext;
+
+    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+        super(fm);
+        mContext = context;
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+
+        switch (position){
+            case 0:
+                Bangla b=new Bangla();
+                return b;
+            case 1:
+                India i=new India();
+                return i;
+            case 2:
+                Pakistan p=new Pakistan();
+                return p;
+            case 3:
+                China c=new China();
+                return c;
+        }
+
+        return null;
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return mContext.getResources().getString(TAB_TITLES[position]);
+    }
+
+    @Override
+    public int getCount() {
+        // Show 4 total pages.
+        return 4;
+    }
+}
